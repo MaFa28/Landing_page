@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use GuzzleHttp\Psr7\Request as Psr7Request;
 use Illuminate\Http\Request;
+use  Illuminate\Support\Facades\DB;
 
 class SitioController extends Controller
 {
@@ -27,7 +29,15 @@ class SitioController extends Controller
 
         ]);
         ///Insercion BD
+        DB::table('contactos')->insert([
+
+            'nombre' => $request->Nombre,
+            'correo' => $request->correo,
+            'comentario' => $request->comentario,
+
+        ]);
         ///Redireccion
+        return redirect('/contacto');
 
     }
 }
