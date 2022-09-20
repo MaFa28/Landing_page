@@ -12,8 +12,8 @@
         @csrf
 
         <label for="nombre">Nombre: </label>
-        <input type="text" name="Nombre" id="nombre" value="{{ old('Nombre') }}">
-        @error('Nombre')
+        <input type="text" name="nombre" id="Nombre" value="{{ old('nombre') }}">
+        @error('nombre')
             <i>{{ $message }}</i>
         @enderror
         <br>

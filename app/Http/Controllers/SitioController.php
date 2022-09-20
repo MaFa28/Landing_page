@@ -23,19 +23,20 @@ class SitioController extends Controller
         //dd($request->Nombre,$request->correo,$request->comentario);
         ///validacion
         $request->validate([
-            'Nombre'=>'required',
+            'nombre'=>'required',
             'correo'=>'required',
             'comentario'=>'required',
 
         ]);
         ///Insercion BD
-        DB::table('contactos')->insert([
+        /*DB::table('contactos')->insert([
 
-            'nombre' => $request->Nombre,
+            'nombre' => $request->nombre,
             'correo' => $request->correo,
             'comentario' => $request->comentario,
 
-        ]);
+        ]);*/
+        DB::table('contactos')->insert($request->except('_token'));
         ///Redireccion
         return redirect('/contacto');
 
