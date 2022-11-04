@@ -17,6 +17,11 @@ class SitioTest extends TestCase
     {
         $response = $this->get('/');
 
+        $response = $this->get('/contacto');
+
+        $response = $this->get('/landingpage');
+
+
         $response->assertStatus(200);
     }
 }
